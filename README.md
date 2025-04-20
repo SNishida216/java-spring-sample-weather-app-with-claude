@@ -1,4 +1,6 @@
 # Cline(claude3.7-sonnet)+ChatGPT 4oで作成したアプリケーション
+<img width="518" alt="image" src="https://github.com/user-attachments/assets/7ebdcaf0-a514-4cd5-b3c6-ecaa7adf0527" />
+
 ## 作成手順
 以下をChatGPTに指示
 ```
