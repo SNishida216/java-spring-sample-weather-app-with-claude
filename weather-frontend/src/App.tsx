@@ -7,6 +7,16 @@ type WeatherResponse = {
   weather: string;
   temperature: string;
   iconUrl: string;
+  
+  // 追加情報
+  weatherCode?: string;
+  wind?: string;
+  wave?: string;
+  pops?: string[];
+  timeDefines?: string[];
+  minTemp?: string;
+  maxTemp?: string;
+  reliability?: string;
 };
 
 type PrefectureOption = {
@@ -85,9 +95,39 @@ function App() {
             <div className="weather-text">
               <p><strong>天気:</strong> {weather.weather}</p>
               <p><strong>気温:</strong> {weather.temperature}℃</p>
+              {weather.wind && <p><strong>風:</strong> {weather.wind}</p>}
+              {weather.wave && <p><strong>波:</strong> {weather.wave}</p>}
+              
+              {weather.pops && weather.timeDefines && (
+                <div className="precipitation">
+                  <p><strong>降水確率:</strong></p>
+                  <ul>
+                    {weather.timeDefines?.map((time, index) => (
+                      weather.pops?.[index] && weather.pops[index] !== "" && (
+                        <li key={index}>
+                          {new Date(time).toLocaleString('ja-JP', {
+                            month: 'numeric',
+                            day: 'numeric',
+                            hour: 'numeric'
+                          })}時: {weather.pops[index]}%
+                        </li>
+                      )
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
+              {weather.minTemp && weather.maxTemp && (
+                <div className="forecast">
+                  <p><strong>明日の予想気温:</strong></p>
+                  <p>最低: {weather.minTemp}℃ / 最高: {weather.maxTemp}℃</p>
+                  {weather.reliability && <p><small>信頼度: {weather.reliability}</small></p>}
+                </div>
+              )}
             </div>
             <div className="weather-icon">
               <img src={weather.iconUrl} alt="天気アイコン" />
+              {weather.weatherCode && <p><small>コード: {weather.weatherCode}</small></p>}
             </div>
           </div>
         </div>
