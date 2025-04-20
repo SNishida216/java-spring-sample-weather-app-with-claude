@@ -1,0 +1,62 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.select-container {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.prefecture-select {
+  width: 100%;
+  color: #333;
+}
+
+.loading {
+  color: #666;
+  font-style: italic;
+}
+
+.error {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.weather-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  color: #333;
+}
+
+.weather-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.weather-text {
+  text-align: left;
+}
+
+.weather-icon img {
+  width: 80px;
+  height: 80px;
+}
+
+@media (max-width: 600px) {
+  .weather-info {
+    flex-direction: column;
+  }
+  
+  .weather-text {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
