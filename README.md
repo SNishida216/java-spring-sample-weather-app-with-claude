@@ -1,5 +1,5 @@
 # Cline(claude3.7-sonnet)+ChatGPT 4oで作成したアプリケーション
-<img width="518" alt="image" src="https://github.com/user-attachments/assets/7ebdcaf0-a514-4cd5-b3c6-ecaa7adf0527" />
+<img width="562" alt="image" src="https://github.com/user-attachments/assets/2e695dcc-7301-4a7c-b83e-18028e6005a6" />
 
 ## 作成手順
 以下をChatGPTに指示
@@ -276,3 +276,8 @@ server: {
 ## かかった費用
 $2.3855
 デバッグに複数リクエスト取られていたのでもう少し抑える工夫はできそう
+
+## 追加で作業させた分
+- repomixでプロジェクトをサマリー化して改修依頼した
+  - 県庁所在地の情報を返すように変更
+  - 他の情報も取得しているのであれば表示
